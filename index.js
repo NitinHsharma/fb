@@ -19,8 +19,11 @@ app.use(‘/webhook’, bot.middleware());
 
 
 		app.get('/', (req, res) => {
+			console.log('request came');
 			res.send(“hello world”);
 		});
+
+	
 
 		var server = app.listen(process.env.PORT || 5000, function() {
 
