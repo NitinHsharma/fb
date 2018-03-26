@@ -1,6 +1,6 @@
-const express = require(‘express’);
+const express = require('express');
 const app = express();
-const FBBotFramework = require(‘fb - bot - framework’);
+const FBBotFramework = require('fb - bot - framework');
 const data = require('./config.json')
 	// Initialize
 const bot = new FBBotFramework({
@@ -23,7 +23,7 @@ app.use(‘/webhook’, bot.middleware());
 			res.send(“hello world”);
 		});
 
-	
+
 
 		var server = app.listen(process.env.PORT || 5000, function() {
 
