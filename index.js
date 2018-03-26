@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const FBBotFramework = require('fb - bot - framework');
+const FBBotFramework = require('fb-bot-framework');
 const data = require('./config.json')
 	// Initialize
 const bot = new FBBotFramework({
