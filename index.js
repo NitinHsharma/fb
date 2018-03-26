@@ -8,7 +8,7 @@ const bot = new FBBotFramework({
 });
 
 // Setup Express middleware for /webhook
-app.use(‘/webhook’, bot.middleware());
+app.use('/webhook', bot.middleware());
 		// parse application/json
 		app.use(bodyParser.json())
 
