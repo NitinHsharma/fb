@@ -13,14 +13,14 @@ app.use('/webhook', bot.middleware());
 		app.use(bodyParser.json())
 
 		// Setup listener for incoming messages
-		bot.on(‘message’, (userId, message) => {
+		bot.on('message', (userId, message) => {
 			bot.sendTextMessage(userId, 'Echo Message: ' + message);
 		});
 
 
 		app.get('/', (req, res) => {
 			console.log('request came');
-			res.send(“hello world”);
+			res.send('hello world');
 		});
 
 
@@ -30,5 +30,5 @@ app.use('/webhook', bot.middleware());
 			var host = server.address().address
 			var port = server.address().port
 
-			console.log("Example app listening at http://%s:%s", host, port)
+			console.log('Example app listening at http://%s:%s', host, port)
 		})
