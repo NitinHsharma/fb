@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const FBBotFramework = require('fb-bot-framework');
-const data = require('./config.json')
+const data = require('./config.json');
+const bodyParser = require('body-parser')
+
+	console.log(data);
 	// Initialize
-const bot = new FBBotFramework({
-	data
-});
+const bot = new FBBotFramework(data);
 
 // Setup Express middleware for /webhook
 app.use('/webhook', bot.middleware());
