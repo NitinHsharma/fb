@@ -23,10 +23,8 @@ bot.on('message', (userId, message) => {
 
 	usersId.forEach(element => {
 		console.log('array is ', element);
-		if (element.userId != undefined) {
-			bot.sendTextMessage(element.userId, 'Echo Message: ' + message);
-			console.log('msg sent to ',element.userId);
-		}
+		bot.sendTextMessage(element.userId, 'Echo Message: ' + message);
+		console.log('msg sent to ', element.userId);
 	})
 });
 
