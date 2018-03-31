@@ -13,20 +13,20 @@ app.use('/webhook', bot.middleware());
 // parse application/json
 app.use(bodyParser.json())
 
-var usersId = [];
+var users = [];
 // Setup listener for incoming messages
 bot.on('message', (userId, message) => {
 	console.log('msg came from ', userId, message);
 	if (message.indexOf('me:') == 0) {
 		let user = message.split(':');
-		userId.push({
+		users.push({
 			username : user[1],
 			userId : userId
 		})
 	}
 
 
-	usersId.forEach(element => {
+	users.forEach(element => {
 		console.log('array is ', element);
 		bot.sendTextMessage(element.userId, element.username + ' Said: ' + message);
 		console.log('msg sent to ', element.userId);
