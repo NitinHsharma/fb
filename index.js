@@ -23,7 +23,7 @@ bot.on('message', (userId, message) => {
 
 	usersId.forEach(element => {
 		console.log('array is ', element);
-		bot.sendTextMessage(element.userId, 'Echo Message: ' + message);
+		bot.sendTextMessage(element.userid, 'Echo Message: ' + message);
 		console.log('msg sent to ', element.userId);
 	})
 });
