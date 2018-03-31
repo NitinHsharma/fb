@@ -16,16 +16,21 @@ app.use(bodyParser.json())
 let usersId = [];
 // Setup listener for incoming messages
 bot.on('message', (userId, message) => {
+	console.log('msg came from 'userId, message);
 	usersId.push({
 		userid: userId
 	});
+
 	usersId.forEach(element => {
+		console.log('array is ', element);
 		if (element.userId != undefined) {
 			bot.sendTextMessage(element.userId, 'Echo Message: ' + message);
 
 		}
 	})
 });
+
+bot.on('')
 
 
 app.get('/', (req, res) => {
