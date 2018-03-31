@@ -30,7 +30,6 @@ bot.on('message', (userId, message) => {
 	})
 });
 
-bot.on('')
 
 
 app.get('/', (req, res) => {
