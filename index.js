@@ -26,10 +26,10 @@ bot.on('message', (userId, message) => {
 	}
 	console.log('before ',users);
 	var sender = users.filter(x => x.userId == userId);
-	console.log('afetr ',sender);
+	console.log('afetr ',sender[0]);
 	users.forEach(element => {
 		console.log('array is ', element);
-		bot.sendTextMessage(element.userId, sender.username + ' Said: ' + message);
+		bot.sendTextMessage(element.userId, sender[0].username + ' Said: ' + message);
 		console.log('msg sent to ', element.userId);
 	})
 });
