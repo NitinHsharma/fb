@@ -20,15 +20,15 @@ bot.on('message', (userId, message) => {
 	if (message.indexOf('me:') == 0) {
 		let user = message.split(':');
 		users.push({
-			username : user[1],
-			userId : userId
+			username: user[1],
+			userId: userId
 		})
 	}
-
+	var sender = users.filter(x => x.userId == userId);
 
 	users.forEach(element => {
 		console.log('array is ', element);
-		bot.sendTextMessage(element.userId, element.username + ' Said: ' + message);
+		bot.sendTextMessage(element.userId, sender.username + ' Said: ' + message);
 		console.log('msg sent to ', element.userId);
 	})
 });
