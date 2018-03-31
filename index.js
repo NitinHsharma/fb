@@ -24,8 +24,9 @@ bot.on('message', (userId, message) => {
 			userId: userId
 		})
 	}
+	console.log('before ',users);
 	var sender = users.filter(x => x.userId == userId);
-
+	console.log('afetr ',sender);
 	users.forEach(element => {
 		console.log('array is ', element);
 		bot.sendTextMessage(element.userId, sender.username + ' Said: ' + message);
