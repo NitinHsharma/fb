@@ -17,13 +17,18 @@ var usersId = [];
 // Setup listener for incoming messages
 bot.on('message', (userId, message) => {
 	console.log('msg came from ', userId, message);
-	usersId.push({
-		userid: userId
-	});
+	if (message.indexOf('me:') == 0) {
+		let user = message.split(':');
+		userId.push({
+			username : user[1],
+			userId : userId
+		})
+	}
+
 
 	usersId.forEach(element => {
 		console.log('array is ', element);
-		bot.sendTextMessage(element.userid, 'Echo Message: ' + message);
+		bot.sendTextMessage(element.userId, element.username + ' Said: ' + message);
 		console.log('msg sent to ', element.userId);
 	})
 });
