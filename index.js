@@ -4,8 +4,8 @@ const FBBotFramework = require('fb-bot-framework');
 const bodyParser = require('body-parser')
 
 
-console.log('pageToken',process.env.pageToken);
-console.log('verifyToken',process.env.verifyToken);
+console.log('pageToken',process.env.PTOKEN);
+console.log('verifyToken',process.env.VTOKEN);
 // Initialize
 const bot = new FBBotFramework({
 	"page_token": process.env.pageToken,
