@@ -8,8 +8,8 @@ console.log('pageToken',process.env.PTOKEN);
 console.log('verifyToken',process.env.VTOKEN);
 // Initialize
 const bot = new FBBotFramework({
-	"page_token": process.env.pageToken,
-	"verify_token": process.env.verifyToken
+	"page_token": process.env.PTOKEN,
+	"verify_token": process.env.VTOKEN
 });
 
 console.log('pass');
