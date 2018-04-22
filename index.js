@@ -2,11 +2,17 @@ const express = require('express');
 const app = express();
 const FBBotFramework = require('fb-bot-framework');
 const bodyParser = require('body-parser')
+
+
+console.log('pageToken',process.env.pageToken);
+console.log('verifyToken',process.env.verifyToken);
 // Initialize
 const bot = new FBBotFramework({
 	"page_token": process.env.pageToken,
 	"verify_token": process.env.verifyToken
 });
+
+console.log('pass');
 // Setup Express middleware for /webhook
 app.use('/webhook', bot.middleware());
 // parse application/json
@@ -35,3 +41,4 @@ var server = app.listen(process.env.PORT || 5000, function() {
 	var host = server.address().address
 	var port = server.address().port
 })
+
